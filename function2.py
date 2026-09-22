@@ -1,8 +1,3 @@
-#THIS IS MY SECOND FUNCTION
-
-
-# FOR THE SECOND FUNCTION I WATNT TO ADD THIS
-
 def findpeaks(arr):
     """
     This function takes a list of numbers as input and returns the indices of the peaks in the list.

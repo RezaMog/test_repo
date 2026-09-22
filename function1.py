@@ -10,11 +10,3 @@ def twosum(a, b):
     int or float: The sum of the two numbers.
     """
     return a + b
-
-
-
-
-#NOW I CHANGE THIS FUNCITON
-
-
-# FOR FUNCTION1 I WANT TO ADD THIS
