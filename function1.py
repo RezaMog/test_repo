@@ -14,4 +14,7 @@ def twosum(a, b):
 
 
 
-#now I change this funciton
+#NOW I CHANGE THIS FUNCITON
+
+
+# FOR FUNCTION1 I WANT TO ADD THIS
