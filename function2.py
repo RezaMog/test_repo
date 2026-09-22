@@ -15,3 +15,6 @@ def findpeaks(arr):
         if arr[i] > arr[i - 1] and arr[i] > arr[i + 1]:
             peaks.append(i)
     return peaks
+
+
+#comment 2
