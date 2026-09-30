@@ -258,3 +258,7 @@ animals = [Dog(), Cat()]
 
 for animal in animals:
     print(animal.speak())
+    
+    
+# I add this to change the main branch in parralel to the other branch to see if it will cause a conflict when merging
+print("This is a change in the main branch to test merging with another branch.")
