@@ -157,3 +157,38 @@ class BaseClass:
 
     # protected methods are not meant to be accessed from outside the class,
     # they are usllay used inside the class or by subclasses to provide functionality that is not intended to be part of the public interface of the class.
+
+
+# Example 6 - abstaction
+class EmailService:
+    def connect(self):
+        print("Connecting to email server...")
+
+    def authenticate(self):
+        print("Authenticating...")
+
+    def send_email(self):
+        print("Sending email...")
+
+
+service1 = EmailService()
+service1.connect()
+service1.authenticate()
+service1.send_email()
+
+
+class AbstractEmailService:
+    def _connect(self):
+        print("Connecting to email server...")
+
+    def _authenticate(self):
+        print("Authenticating...")
+
+    def send_email(self):
+        self._connect()
+        self._authenticate()
+        print("Sending email...")
+
+
+service2 = AbstractEmailService()
+service2.send_email()  # This will call the protected methods internally
