@@ -102,3 +102,45 @@ print(student2.school_name)
 print(Student.is_adult(20))  # True
 print(Student.is_adult(16))  # False
 print(student1.is_adult(student1.age))  # True
+
+
+# Example 4 - Encapsulation
+class BadBankAccount:
+    def __init__(self, in_balance):
+        self.balance = in_balance
+
+
+account1 = BadBankAccount(0.0)
+account1.balance = -100  # This is not good, we should not allow negative balance
+
+
+class GoodBankAccount:
+    def __init__(self):
+        self._balance = 0
+
+    @property
+    def balance(self):
+        return self._balance
+
+    def deposit(self, amount):
+        if amount <= 0:
+            raise ValueError("Deposit amount must be positive")
+        # break exits a loop.
+        # raise signals an error and unwinds out of the current function
+        # ValueError: the function got a value it can’t accept
+        self._balance += amount
+
+    def withdraw(self, amount):
+        if amount <= 0:
+            raise ValueError("Withdrawal amount must be positive")
+        if amount > self._balance:
+            raise ValueError("Insufficient funds")
+        self._balance -= amount
+
+
+account2 = GoodBankAccount()
+print(account2.balance)  # Output: 0
+# account2.balance = 100  # This will raise an AttributeError since we dont have a setter for balance
+account2.deposit(199)
+account2.withdraw(50)
+print(account2.balance)  # Output: 149
