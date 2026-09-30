@@ -82,6 +82,7 @@ class Student:
     # Static method
     # Static methods are methods that belong to the class rather than an instance of the class.
     # They do not have access to instance-specific data (like self) and can be called on the class itself or on instances of the class.
+
     @staticmethod
     def is_adult(age):
         return age >= 18
@@ -144,3 +145,15 @@ print(account2.balance)  # Output: 0
 account2.deposit(199)
 account2.withdraw(50)
 print(account2.balance)  # Output: 149
+
+
+# Example 5 - protected methods
+class BaseClass:
+    def __init__(self):
+        self._protected_attribute = "I am protected"
+
+    def _protected_method(self):
+        print("This is a protected method")
+
+    # protected methods are not meant to be accessed from outside the class,
+    # they are usllay used inside the class or by subclasses to provide functionality that is not intended to be part of the public interface of the class.
