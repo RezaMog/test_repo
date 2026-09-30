@@ -102,3 +102,7 @@ print(student2.school_name)
 print(Student.is_adult(20))  # True
 print(Student.is_adult(16))  # False
 print(student1.is_adult(student1.age))  # True
+
+
+# I add this to change the main branch in parralel to the other branch to see if it will cause a conflict when merging
+print("This is a change in the main branch to test merging with another branch.")
