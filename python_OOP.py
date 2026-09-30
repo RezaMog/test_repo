@@ -192,3 +192,46 @@ class AbstractEmailService:
 
 service2 = AbstractEmailService()
 service2.send_email()  # This will call the protected methods internally
+
+
+# Example 7 - Inheritance
+class Vehicle:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+    def start_engine(self):
+        print("engine started.")
+
+
+class Car(Vehicle):
+    def __init__(self, make, model, num_doors):
+        super().__init__(make, model)  # Call the constructor of the parent class
+        self.num_doors = num_doors
+
+    def start_engine(self):
+        print(
+            f"{self.make} {self.model} car engine started with {self.num_doors} doors."
+        )
+
+
+class Bike(Vehicle):
+    def __init__(self, make, model, has_pedals):
+        super().__init__(make, model)  # Call the constructor of the parent class
+        self.has_pedals = has_pedals
+
+    def start_engine(self):
+        print(
+            f"{self.make} {self.model} bike engine started. Pedals: {self.has_pedals}"
+        )
+
+
+car1 = Car("Toyota", "Camry", 4)
+bike1 = Bike("Yamaha", "YZF-R3", False)
+print(car1.__dict__)  # Output: {'make': 'Toyota', 'model': 'Camry', 'num_doors': 4}
+print(
+    bike1.__dict__
+)  # Output: {'make': 'Yamaha', 'model': 'YZF-R3', 'has_pedals': False}
+
+car1.start_engine()  # Output: Toyota Camry car engine started with 4 doors.
+bike1.start_engine()  # Output: Yamaha YZF-R3 bike engine started. Pedals: False
