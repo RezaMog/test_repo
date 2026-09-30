@@ -159,7 +159,7 @@ class BaseClass:
     # they are usllay used inside the class or by subclasses to provide functionality that is not intended to be part of the public interface of the class.
 
 
-# Example 6 - abstaction
+# Example 6 - Abstraction
 class EmailService:
     def connect(self):
         print("Connecting to email server...")
@@ -235,3 +235,26 @@ print(
 
 car1.start_engine()  # Output: Toyota Camry car engine started with 4 doors.
 bike1.start_engine()  # Output: Yamaha YZF-R3 bike engine started. Pedals: False
+
+
+# Example 8 - Polymorphism
+# Polymorphism allows objects of different classes to be treated as objects of a common superclass.
+class Animal:
+    def speak(self):
+        raise NotImplementedError("Subclasses must implement this method")
+
+
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"
+
+
+class Cat(Animal):
+    def speak(self):
+        return "Meow!"
+
+
+animals = [Dog(), Cat()]
+
+for animal in animals:
+    print(animal.speak())
